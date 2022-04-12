@@ -76,7 +76,7 @@
                     <div class="card shadow-sm">
                         <p th:text="${product.getName()}"></p>
                         <p th:text="${product.getDescription()}"></p>
-                        <p th:text="'price: 100$'"></p>
+                        <p th:text="'price: ' + ${product.price}"></p>
                         <div class="container">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
                                 <div class="col-6"></div>

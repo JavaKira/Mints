@@ -19,6 +19,8 @@ public class Product {
     private String description;
     private String thumbnailPath;
 
+    private int price;
+
     public Product(String name, String description, String thumbnailPath) {
         this.name = name;
         this.description = description;

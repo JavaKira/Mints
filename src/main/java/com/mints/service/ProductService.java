@@ -16,4 +16,9 @@ public class ProductService {
     {
         return repository.findAll();
     }
+
+    public Product getByName(String name)
+    {
+        return getAll().stream().filter(product -> product.getName().equals(name)).findAny().orElse(null);
+    }
 }

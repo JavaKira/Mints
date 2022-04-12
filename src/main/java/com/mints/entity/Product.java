@@ -18,12 +18,13 @@ public class Product {
     private String name;
     private String description;
     private String thumbnailPath;
-
     private int price;
 
-    public Product(String name, String description, String thumbnailPath) {
+    public Product(int id, String name, String description, String thumbnailPath, int price) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.thumbnailPath = thumbnailPath;
+        this.price = price;
     }
 }

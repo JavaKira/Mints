@@ -82,6 +82,13 @@
                                 <td th:text="${cart.getProductTotalPrice(product)}">Price</td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th th:text="${cart.getCount()}" scope="row">Count</th>
+                                <td>Total</td>
+                                <td th:text="${cart.getProductTotalPrice()}">Price</td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

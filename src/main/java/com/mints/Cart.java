@@ -6,6 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
 public class Cart implements Serializable {
@@ -26,7 +27,24 @@ public class Cart implements Serializable {
         return products.get(product);
     }
 
+    public int getCount()
+    {
+        AtomicInteger totalCount = new AtomicInteger();
+        products.keySet().forEach((product) -> {
+            totalCount.addAndGet(getCount(product));
+        });
+        return totalCount.get();
+    }
+
     public int getProductTotalPrice(Product product) {
         return product.getPrice() * getCount(product);
+    }
+
+    public int getProductTotalPrice() {
+        AtomicInteger totalPrice = new AtomicInteger();
+        products.keySet().forEach((product) -> {
+            totalPrice.addAndGet(getProductTotalPrice(product));
+        });
+        return totalPrice.get();
     }
 }

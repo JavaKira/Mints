@@ -11,11 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("cart")
 public class CartController {
     @GetMapping
-    public String getIndexPage(Model model, HttpServletRequest request)
-    {
+    public String getIndexPage(Model model, HttpServletRequest request) {
         Cart cart = (Cart) request.getSession().getAttribute("cart");
-        if (cart == null)
-        {
+        if (cart == null) {
             cart = new Cart();
             request.getSession().setAttribute("cart", cart);
         }

@@ -12,13 +12,11 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    public List<Product> getAll()
-    {
+    public List<Product> getAll() {
         return repository.findAll();
     }
 
-    public Product getByName(String name)
-    {
+    public Product getByName(String name) {
         return getAll().stream().filter(product -> product.getName().equals(name)).findAny().orElse(null);
     }
 }

@@ -15,21 +15,18 @@ public class Cart implements Serializable {
         products = new HashMap<>();
     }
 
-    public void addProduct(Product product)
-    {
+    public void addProduct(Product product) {
         if (products.containsKey(product))
             products.put(product, products.get(product) + 1);
         else
             products.put(product, 1);
     }
 
-    public int getCount(Product product)
-    {
+    public int getCount(Product product) {
         return products.get(product);
     }
 
-    public int getProductTotalPrice(Product product)
-    {
+    public int getProductTotalPrice(Product product) {
         return product.getPrice() * getCount(product);
     }
 }

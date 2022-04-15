@@ -18,25 +18,21 @@ public class ProductsController {
     private ProductService productService;
 
     @GetMapping
-    public String index(Model model)
-    {
+    public String index(Model model) {
         model.addAttribute("products", productService.getAll());
         return "products/index";
     }
 
     @GetMapping("/{name}")
-    public String productPage(@PathVariable String name, Model model)
-    {
+    public String productPage(@PathVariable String name, Model model) {
         model.addAttribute("product", productService.getByName(name));
         return "products/product";
     }
 
     @PostMapping("/{name}")
-    public String addProduct(@PathVariable String name, Model model, HttpServletRequest request)
-    {
+    public String addProduct(@PathVariable String name, Model model, HttpServletRequest request) {
         Cart cart = (Cart) request.getSession().getAttribute("cart");
-        if (cart == null)
-        {
+        if (cart == null) {
             cart = new Cart();
             request.getSession().setAttribute("cart", cart);
         }

@@ -23,7 +23,17 @@ public class Cart implements Serializable {
             products.put(product, 1);
     }
 
+    public void removeProduct(Product product) {
+        if (products.containsKey(product) && products.get(product) > 0) {
+            products.put(product, products.get(product) - 1);
+            if (products.get(product) <= 0)
+                products.remove(product);
+        }
+    }
+
     public int getCount(Product product) {
+        if (!products.containsKey(product))
+            return 0;
         return products.get(product);
     }
 

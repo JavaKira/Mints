@@ -49,10 +49,6 @@
                 <li><a href="/about" class="nav-link px-2 text-white">About</a></li>
             </ul>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-            </form>
-
             <div class="text-end">
                 <form method="get" action="/cart">
                     <button type="submit" class="btn btn-warning">Cart</button>
@@ -65,6 +61,9 @@
 <main>
     <div class="album py-5 bg-light">
         <div class="container">
+            <div>
+                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div th:each="product : ${products}">
                     <div class="col">

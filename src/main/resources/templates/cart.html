@@ -75,14 +75,14 @@
                             <tr th:each="product : ${cart.getProducts().keySet()}">
                                 <th th:text="${cart.getCount(product)}" scope="row">Count</th>
                                 <td th:text="${product.getName()}">Name</td>
-                                <td th:text="${cart.getProductTotalPrice(product)}">Price</td>
+                                <td th:text="${cart.getProductTotalPrice(product)} + '₽'">Price</td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th th:text="${cart.getCount()}" scope="row">Count</th>
                                 <td>Total</td>
-                                <td th:text="${cart.getProductTotalPrice()}">Price</td>
+                                <td th:text="${cart.getProductTotalPrice()} + '₽'">Price</td>
                             </tr>
                         </tfoot>
                     </table>

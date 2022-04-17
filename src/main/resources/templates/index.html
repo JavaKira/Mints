@@ -66,14 +66,15 @@
         <div class="container">
             <p class="text-center">Best products:</p>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div th:each="product : ${T(java.util.List).of(products.get(0), products.get(1))}">
+                <div th:each="product : ${T(java.util.List).of(products.get(0), products.get(1), products.get(2))}">
                     <div class="col">
                         <a th:href="'/products/' + ${product.getName()}" class="text-decoration-none text-dark">
                             <div class="card shadow-sm">
                                 <img th:src="${product.getThumbnailPath()}">
 
                                 <div class="card-body">
-                                    <p class="card-text" th:text="${product.getDescription()}"></p>
+                                    <p class="card-text" th:text="${product.getName()}"></p>
+                                    <p class="card-text text-secondary" th:text="${product.getPrice()} + '₽'"></p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-outline-secondary">View</button>

@@ -69,7 +69,7 @@
                     <div class="col">
                         <a th:href="'/products/' + ${product.getName()}" class="text-decoration-none text-dark">
                             <div class="card shadow-sm">
-                                <img th:src="${product.getThumbnailPath()}">
+                                <img th:src="${product.getThumbnailPath()}" style="height: 300px">
 
                                 <div class="card-body">
                                     <p class="card-text" th:text="${product.getName()}"></p>
